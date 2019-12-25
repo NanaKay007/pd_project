@@ -1,11 +1,14 @@
 var name_box,add_button,recipes,delete_button;
 window.onload = function(){
-    name_box = document.querySelector('#box > input'),
-    add_button = document.querySelector('#add'),
-    recipes = document.querySelector('#recipes'),
-    delete_button = document.querySelector('#delete')
+    name_box = document.querySelector('#box > input'), //reference to recipe name box 
+    add_button = document.querySelector('#add'), //reference to `add recipe` button
+    recipes = document.querySelector('#recipes'), //recipes DOM container
+    delete_button = document.querySelector('#delete') //`delete selected recipes` button
 
     add_button.onclick = function(){
+        // @purpose: adds a recipe to recipe list
+        // @param: none
+        // @return: void
         var recipe = RecipeList.createRecipe(name_box.value);
         if(recipe){
             RecipeList.addRecipe(recipe);
@@ -15,6 +18,9 @@ window.onload = function(){
     }
 
     delete_button.onclick = function(){
+        // @purpose: removes checked recipe items from recipe list
+        // @param: none
+        // @return: void
         var radios = document.querySelectorAll('.radio');
         radios.forEach(function(item){
             if(item.checked){
