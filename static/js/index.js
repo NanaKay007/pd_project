@@ -63,10 +63,10 @@ var RecipeList = (function () {
             // @return: void
             if (_id > -1) {
                 list = list.filter(function (item, i) {
-                    if(item.id === index){
+                    if(item.id === _id){
                         recipes.removeChild(item);
                     }
-                    return item.id !== index;
+                    return item.id !== _id;
                 });
                 
             }
