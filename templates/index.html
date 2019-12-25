@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipe List</title>
+        <script src="{{url_for('static',filename='js/index.js')}}"></script>
+        <link href="{{url_for('static',filename='css/index.css')}}" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Recipe List</h1>
+        <div id="box">
+            <input type="text" >
+            <button id='add'>Add Recipe</button>
+            <button id="delete">Delete Selected Recipes</button>
+        </div>
+        <div id="recipes">
+
+        </div>
+    </body>
+</html>
