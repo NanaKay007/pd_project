@@ -27,6 +27,10 @@ window.onload = function(){
 
 function Recipe(name,id) {
     /*
+    @purpose: constructs a recipe object
+    @param: name -> name of recipe
+            id -> unique id for the recipe object
+    @return: a DOM element representing the recipe object
     */
     this.name = name;
     var element = document.createElement('div')
@@ -41,18 +45,23 @@ function Recipe(name,id) {
 }
 
 var RecipeList = (function () {
+    // @purpose: defines variables and methods representing a Recipe list object and its operations
+    // @param: none
+    // @return: an object that exposes public methods for carrying out specific operations
     var list = [];
     return {
         addRecipe: function (recipe) {
-            /*
-            */
+            // @purpose: adds a recipe object to the recipe list
+            // @param: recipe -> an object of type `Recipe`
+            // @return: void
             list.push(recipe);
             recipes.appendChild(recipe);
         },
-        removeRecipe: function (index) {
-            /*
-             */
-            if (index > -1) {
+        removeRecipe: function (_id) {
+            // @purpose: removes a recipe item with a specific id from the recipe list
+            // @param: _id -> the id of the object to be removed
+            // @return: void
+            if (_id > -1) {
                 list = list.filter(function (item, i) {
                     if(item.id === index){
                         recipes.removeChild(item);
@@ -63,8 +72,9 @@ var RecipeList = (function () {
             }
         },
         createRecipe: function (name) {
-            /* 
-            */
+            // @purpose: creates a recipe object using a non-empty string and an id value
+            // @param: name -> a non-empty string representing the name of the recipe
+            // @return: the recipe object
            if(!name){
                return null
            }
