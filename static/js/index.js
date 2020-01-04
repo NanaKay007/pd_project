@@ -61,7 +61,8 @@ var RecipeList = (function () {
             // @param: recipe -> an object of type `Recipe`
             // @return: void
             list.push(recipe);
-            recipes.appendChild(recipe);
+
+            recipes.insertBefore(recipe,recipes.childNodes[0]);
         },
         removeRecipe: function (_id) {
             // @purpose: removes a recipe item with a specific id from the recipe list
